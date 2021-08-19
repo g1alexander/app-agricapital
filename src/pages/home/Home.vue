@@ -1,15 +1,45 @@
 <template>
-  <hello-world />
+  <div style="height:100vh;">
+    <Header v-if="view" />
+    <Content />
+  </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+import Content from "./components/Content.vue";
+import Header from "./components/Header";
 
 export default {
   name: "Home",
 
   components: {
-    HelloWorld,
+    Header,
+    Content,
+  },
+
+  data() {
+    return {
+      view: null,
+    };
+  },
+
+  created() {
+    this.media();
+  },
+
+  methods: {
+    media() {
+      let myFunction = (x) => {
+        if (x.matches) {
+          this.view = true;
+        } else {
+          this.view = false;
+        }
+      };
+      let x = window.matchMedia("(max-width: 769px)");
+      myFunction(x); // Call listener function at run time
+      x.addEventListener("change", myFunction);
+    },
   },
 };
 </script>
