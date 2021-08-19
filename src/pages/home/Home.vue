@@ -1,5 +1,5 @@
 <template>
-  <div style="height:100vh;">
+  <div class="pb-16">
     <Header v-if="view" />
     <Content />
   </div>

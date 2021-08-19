@@ -1,7 +1,7 @@
 <template>
   <v-img
     lazy-src="@/assets/Top.svg"
-    max-height="130"
+    max-height="100"
     max-width="100%"
     src="@/assets/Top.svg"
     class="d-flex align-center"
