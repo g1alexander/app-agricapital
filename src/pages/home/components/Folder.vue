@@ -72,7 +72,7 @@ export default {
 
       let progress = setInterval(() => {
         this.fileUpload = true;
-        this.knowledge += 1;
+        this.knowledge += 10;
 
         if (this.knowledge === 100) {
           this.fileUpload = false;
